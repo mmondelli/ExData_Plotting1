@@ -7,7 +7,7 @@ data_filtered <- data[data$Date>=as.Date("2007-02-01") & data$Date<=as.Date("200
 dateTime <- strptime(paste(data_filtered$Date, data_filtered$Time, sep=" "), "%Y-%m-%d %X")
 data_filtered <- cbind(data_filtered, dateTime)
 # Plotting
-png(filename="plot4.png")
+png(filename="plot4.png",width=480,height=480)
 # Set par (2 rows, 2 columns)
 par(mfcol=c(2,2))
 

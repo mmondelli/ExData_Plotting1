@@ -7,7 +7,7 @@ data_filtered <- data[data$Date>=as.Date("2007-02-01") & data$Date<=as.Date("200
 dateTime <- strptime(paste(data_filtered$Date, data_filtered$Time, sep=" "), "%Y-%m-%d %X")
 data_filtered <- cbind(data_filtered, dateTime)
 # Plotting
-png(filename="plot2.png")
+png(filename="plot2.png",width=480,height=480)
 with(data_filtered, plot(dateTime, Global_active_power, type="n", xlab="", ylab="Global Active Power (kilowatts)"))
 with(data_filtered, lines(dateTime, Global_active_power))
 dev.off()

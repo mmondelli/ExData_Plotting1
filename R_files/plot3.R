@@ -7,7 +7,7 @@ data_filtered <- data[data$Date>=as.Date("2007-02-01") & data$Date<=as.Date("200
 dateTime <- strptime(paste(data_filtered$Date, data_filtered$Time, sep=" "), "%Y-%m-%d %X")
 data_filtered <- cbind(data_filtered, dateTime)
 # Plotting
-png(filename="plot3.png")
+png(filename="plot3.png",width=480,height=480)
 with(data_filtered, plot(dateTime, data_filtered$Sub_metering_1, type="n", xlab="", ylab="Energy sub metering"))
 with(data_filtered, lines(dateTime, Sub_metering_1))
 with(data_filtered, lines(dateTime, Sub_metering_2, col="red"))
